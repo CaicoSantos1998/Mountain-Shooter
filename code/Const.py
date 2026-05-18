@@ -1,0 +1,15 @@
+# C
+COLOR_ORANGE = (255, 128, 0)
+COLOR_WHITE = (255, 255, 255)
+# M
+MENU_OPTION = ('NEW GAME 1P',
+               'NEW GAME 2P - COOPERATIVE',
+               'NEW GAME 2P - COMPETITIVE',
+               'SCORE',
+               'EXIT')
+# S
+SCREEN_WIDTH = 380
+SCREEN_HEIGHT = 676
+SIZE_TEXT = 100
+
+
