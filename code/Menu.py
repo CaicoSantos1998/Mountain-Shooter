@@ -4,30 +4,48 @@ import pygame as pg
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import SCREEN_WIDTH, COLOR_ORANGE, SIZE_TEXT, MENU_OPTION, COLOR_WHITE
+from code.Const import COLOR_ORANGE, SIZE_TEXT, MENU_OPTION, COLOR_WHITE, SCREEN_WIDTH
 
 
 class Menu:
     def __init__(self, screen):
         self.screen = screen
-        self.surf = pg.image.load('./assert/MenuBG.png')
+        self.surf = pg.image.load('./asset/MenuBG.png')
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
-        pg.mixer_music.load('./assert/Menu-music.wav')
+        menu_option = 0
+        pg.mixer_music.load('./asset/Menu-music.wav')
         pg.mixer_music.play(-1)
         while True:
+            # Draw images
             self.screen.blit(source=self.surf, dest=self.rect)
-            self.menu_text(SIZE_TEXT, "Mountain", COLOR_ORANGE, (SCREEN_WIDTH, 70))
-            self.menu_text(SIZE_TEXT, "Shooter", COLOR_ORANGE, (SCREEN_WIDTH, 110))
+            self.menu_text(SIZE_TEXT, "Mountain", COLOR_ORANGE, ((SCREEN_WIDTH/2), 70))
+            self.menu_text(SIZE_TEXT, "Shooter", COLOR_ORANGE, ((SCREEN_WIDTH/2), 120))
             for i in range(len(MENU_OPTION)):
-                self.menu_text(40, MENU_OPTION[i], COLOR_WHITE, (SCREEN_WIDTH, 200 + 25 * i))
+                if i == menu_option:
+                    self.menu_text(40, MENU_OPTION[i], COLOR_ORANGE, ((SCREEN_WIDTH / 2), 200 + 25 * i))
+                else:
+                    self.menu_text(40, MENU_OPTION[i], COLOR_WHITE, ((SCREEN_WIDTH/2), 200 + 25 * i))
             pg.display.flip()
             #Check for all events
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit() # Close window
                     quit() # end pg
+                if event.type == pg.KEYDOWN:
+                    if event.key == pg.K_DOWN:
+                        if menu_option < len(MENU_OPTION)-1:
+                            menu_option+=1
+                        else:
+                            menu_option=0
+                    if event.key == pg.K_UP:
+                        if menu_option > 0:
+                            menu_option-=1
+                        else:
+                            menu_option=len(MENU_OPTION)-1
+                    if event.key == pg.K_RETURN:
+                        return MENU_OPTION[menu_option]
 
     def menu_text(self, text_size:int, text:str, text_color:tuple, text_center_pos:tuple):
         text_font: Font = pg.font.SysFont(name="Lucida Sans Typerwriter", size=text_size)
