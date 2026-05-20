@@ -10,12 +10,12 @@ from code.Const import COLOR_ORANGE, SIZE_TEXT, MENU_OPTION, COLOR_WHITE, SCREEN
 class Menu:
     def __init__(self, screen):
         self.screen = screen
-        self.surf = pg.image.load('./asset/MenuBG.png')
+        self.surf = pg.image.load('./asset/MenuBG.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
         menu_option = 0
-        pg.mixer_music.load('./asset/Menu-music.wav')
+        pg.mixer_music.load('./asset/MusicMenu.mp3')
         pg.mixer_music.play(-1)
         while True:
             # Draw images
