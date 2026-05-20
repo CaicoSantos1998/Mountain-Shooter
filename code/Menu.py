@@ -15,7 +15,7 @@ class Menu:
 
     def run(self, ):
         menu_option = 0
-        pg.mixer_music.load('./asset/MusicMenu.mp3')
+        pg.mixer_music.load('./asset/MenuMusic.mp3')
         pg.mixer_music.play(-1)
         while True:
             # Draw images
