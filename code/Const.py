@@ -1,4 +1,6 @@
 # C
+import pygame as pg
+
 COLOR_ORANGE = (255, 128, 0)
 COLOR_WHITE = (255, 255, 255)
 # E
@@ -18,6 +20,12 @@ MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COMPETITIVE',
                'SCORE',
                'EXIT')
+# P
+PLAYER_KEY_W = {'ShipPlayer1':pg.K_w, 'ShipPlayer2':pg.K_UP}
+PLAYER_KEY_S = {'ShipPlayer1':pg.K_s, 'ShipPlayer2':pg.K_DOWN}
+PLAYER_KEY_A = {'ShipPlayer1':pg.K_a, 'ShipPlayer2':pg.K_LEFT}
+PLAYER_KEY_D = {'ShipPlayer1':pg.K_d, 'ShipPlayer2':pg.K_RIGHT}
+PLAYER_KEY_SHOOT = {'ShipPlayer1':pg.K_SPACE, 'ShipPlayer2':pg.K_RCTRL}
 # S
 SCREEN_WIDTH = 676
 SCREEN_HEIGHT = 380

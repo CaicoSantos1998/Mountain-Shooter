@@ -6,7 +6,7 @@ import pygame as pg
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import COLOR_WHITE, SCREEN_HEIGHT
+from code.Const import COLOR_WHITE, SCREEN_HEIGHT, MENU_OPTION
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 
@@ -19,6 +19,8 @@ class Level:
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1BG'))
         self.entity_list.append(EntityFactory.get_entity('ShipPlayer1'))
+        if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
+            self.entity_list.append(EntityFactory.get_entity('ShipPlayer2'))
         self.timeout = 20000
 
     def run(self):

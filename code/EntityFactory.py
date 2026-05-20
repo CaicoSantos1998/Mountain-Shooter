@@ -17,5 +17,7 @@ class EntityFactory:
                     list_bg.append(Background(f'Level1BG{i}', (SCREEN_WIDTH, 0)))
                 return list_bg
             case 'ShipPlayer1':
-                return Player('ShipPlayer1', (10, SCREEN_HEIGHT/2))
+                return Player('ShipPlayer1', (10, SCREEN_HEIGHT/2 - 30))
+            case 'ShipPlayer2':
+                return Player('ShipPlayer2', (10, SCREEN_HEIGHT/2 + 30))
         return None
