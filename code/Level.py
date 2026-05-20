@@ -1,12 +1,13 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import random
 import sys
 
 import pygame as pg
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import COLOR_WHITE, SCREEN_HEIGHT, MENU_OPTION
+from code.Const import COLOR_WHITE, SCREEN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_ENEMY_TIME
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 
@@ -19,9 +20,10 @@ class Level:
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity('Level1BG'))
         self.entity_list.append(EntityFactory.get_entity('ShipPlayer1'))
+        self.timeout = 20000
         if game_mode in [MENU_OPTION[1], MENU_OPTION[2]]:
             self.entity_list.append(EntityFactory.get_entity('ShipPlayer2'))
-        self.timeout = 20000
+        pg.time.set_timer(EVENT_ENEMY, SPAWN_ENEMY_TIME)
 
     def run(self):
         pg.mixer_music.load(f'./asset/{self.name}.mp3')
@@ -36,6 +38,9 @@ class Level:
                 if event.type == pg.QUIT:
                     pg.quit()
                     sys.exit()
+                if event.type == EVENT_ENEMY:
+                    choice = random.choice(('ShipEnemy1', 'ShipEnemy2'))
+                    self.entity_list.append(EntityFactory.get_entity(choice))
 
             self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
             self.level_text(14, f'FPS: {clock.get_fps():.0f}', COLOR_WHITE, (10, SCREEN_HEIGHT - 35))
