@@ -4,7 +4,7 @@ This is a game project.
 
 ## About project
 
-This game project contains 4 leves, 3 game modes, and a leaderboard, designed to practice skills learned in the classroom.
+This game project contains 4 levels, 3 game modes, and a leaderboard, designed to practice skills learned in the classroom.
 
 This project is still under development and will undergo constant updates until completion.
 

@@ -16,6 +16,34 @@ ENTITY_SPEED = {
     'ShipEnemy1': 3,
     'ShipEnemy2': 2,
 }
+
+ENTITY_HEALTH = {
+    'Level1BG0': 999,
+    'Level1BG1': 999,
+    'Level1BG2': 999,
+    'Level1BG3': 999,
+    'Level1BG4': 999,
+    # 'Level2BG0': 999,
+    # 'Level2BG1': 999,
+    # 'Level2BG2': 999,
+    # 'Level2BG3': 999,
+    # 'Level2BG4': 999,
+    # 'Level3BG0': 999,
+    # 'Level3BG1': 999,
+    # 'Level3BG2': 999,
+    # 'Level3BG3': 999,
+    # 'Level3BG4': 999,
+    # 'Level4BG0': 999,
+    # 'Level4BG1': 999,
+    # 'Level4BG2': 999,
+    # 'Level4BG3': 999,
+    # 'Level4BG4': 999,
+    'ShipPlayer1': 200,
+    'ShipPlayer2': 200,
+    'ShipEnemy1': 280,
+    'ShipEnemy2': 300,
+
+}
 EVENT_ENEMY = pg.USEREVENT + 1
 # M
 MENU_OPTION = ('NEW GAME 1P',
