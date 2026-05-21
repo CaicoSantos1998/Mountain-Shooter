@@ -12,11 +12,14 @@ ENTITY_SPEED = {
     'Level1BG4': 4,
     'Level1BG5': 5,
     'ShipPlayer1': 2.5,
+    'ShipPlayer1Shot': 2,
+    'ShipPlayer2Shot': 2,
     'ShipPlayer2': 2.5,
-    'ShipEnemy1': 3,
+    'ShipEnemy1': 2,
+    'ShipEnemy1Shot': 4,
     'ShipEnemy2': 2,
+    'ShipEnemy2Shot': 5,
 }
-
 ENTITY_HEALTH = {
     'Level1BG0': 999,
     'Level1BG1': 999,
@@ -39,12 +42,24 @@ ENTITY_HEALTH = {
     # 'Level4BG3': 999,
     # 'Level4BG4': 999,
     'ShipPlayer1': 200,
+    'ShipPlayer1Shot': 1,
     'ShipPlayer2': 200,
+    'ShipPlayer2Shot': 1,
     'ShipEnemy1': 280,
     'ShipEnemy2': 300,
+    'ShipEnemy1Shot': 1,
+    'ShipEnemy2Shot': 1,
 
 }
+
 EVENT_ENEMY = pg.USEREVENT + 1
+
+ENTITY_SHOT_DELAY = {
+    'ShipPlayer1': 20,
+    'ShipPlayer2': 20,
+    'ShipEnemy1': 80,
+    'ShipEnemy2': 100
+}
 # M
 MENU_OPTION = ('NEW GAME 1P',
                'NEW GAME 2P - COOPERATIVE',

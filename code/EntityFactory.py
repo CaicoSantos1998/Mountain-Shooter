@@ -26,5 +26,5 @@ class EntityFactory:
             case 'ShipEnemy1':
                 return Enemy('ShipEnemy1', (SCREEN_WIDTH+10, random.randint(40, SCREEN_HEIGHT - 40)))
             case 'ShipEnemy2':
-                return Enemy('ShipEnemy2', (SCREEN_WIDTH + 10, random.randint(40, SCREEN_HEIGHT - 40)))
+                return Enemy('ShipEnemy2', (SCREEN_WIDTH+10, random.randint(40, SCREEN_HEIGHT - 40)))
         return None

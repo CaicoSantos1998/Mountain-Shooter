@@ -1,5 +1,8 @@
+from code.Const import SCREEN_WIDTH
 from code.Enemy import Enemy
+from code.EnemyShot import EnemyShot
 from code.Entity import Entity
+from code.PlayerShot import PlayerShot
 
 
 class EntityMediator:
@@ -7,7 +10,13 @@ class EntityMediator:
     @staticmethod
     def __verify_collision_screen(entity:Entity):
         if isinstance(entity, Enemy):
-            if entity.rect.right < 0:
+            if entity.rect.right <= 0:
+                entity.health = 0
+        if isinstance(entity, PlayerShot):
+            if entity.rect.left >= SCREEN_WIDTH:
+                entity.health = 0
+        if isinstance(entity, EnemyShot):
+            if entity.rect.right <= 0:
                 entity.health = 0
 
     @staticmethod

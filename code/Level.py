@@ -8,9 +8,11 @@ from pygame import Surface, Rect
 from pygame.font import Font
 
 from code.Const import COLOR_WHITE, SCREEN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_ENEMY_TIME
+from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
+from code.Player import Player
 
 
 class Level:
@@ -32,9 +34,13 @@ class Level:
         clock = pg.time.Clock()
         while True:
             clock.tick(60)
-            for ent in self.entity_list:
-                self.screen.blit(source=ent.surf, dest=ent.rect)
-                ent.move()
+            for entity in self.entity_list:
+                self.screen.blit(source=entity.surf, dest=entity.rect)
+                entity.move()
+                if isinstance(entity, (Player, Enemy)):
+                    shoot = entity.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit()
