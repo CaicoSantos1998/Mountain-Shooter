@@ -26,6 +26,11 @@ Game mode Co-op:
 
 <img width="674" height="422" alt="image" src="https://github.com/user-attachments/assets/72776d16-0097-40c7-a0e3-4dda8e40d60f" />
 
+Damage and Collision System:
+
+<img width="674" height="420" alt="image" src="https://github.com/user-attachments/assets/bf23b464-eb03-42c3-b386-0d8213977dab" />
+
+
 ## Setup
 1 - Clone the repository.
 
