@@ -30,6 +30,9 @@ Damage and Collision System:
 
 <img width="674" height="420" alt="image" src="https://github.com/user-attachments/assets/bf23b464-eb03-42c3-b386-0d8213977dab" />
 
+HUD and Scoring System:
+
+<img width="674" height="420" alt="image" src="https://github.com/user-attachments/assets/7252e02a-2b66-4894-acd0-abb074fc42d5" />
 
 ## Setup
 1 - Clone the repository.
