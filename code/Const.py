@@ -1,7 +1,10 @@
 # C
 import pygame as pg
 
+COLOR_CYAN = (0, 128, 128)
+COLOR_GREEN = (0, 128, 0)
 COLOR_ORANGE = (255, 128, 0)
+COLOR_YELLOW = (225, 255, 128)
 COLOR_WHITE = (255, 255, 255)
 # E
 ENTITY_SPEED = {
@@ -90,6 +93,36 @@ ENTITY_DAMAGE = {
     'ShipEnemy1Shot': 35,
     'ShipEnemy2': 1,
     'ShipEnemy2Shot': 25
+}
+ENTITY_SCORE = {
+    'Level1BG0': 0,
+    'Level1BG1': 0,
+    'Level1BG2': 0,
+    'Level1BG3': 0,
+    'Level1BG4': 0,
+    # 'Level2BG0': 0,
+    # 'Level2BG1': 0,
+    # 'Level2BG2': 0,
+    # 'Level2BG3': 0,
+    # 'Level2BG4': 0,
+    # 'Level3BG0': 0,
+    # 'Level3BG1': 0,
+    # 'Level3BG2': 0,
+    # 'Level3BG3': 0,
+    # 'Level3BG4': 0,
+    # 'Level4BG0': 0,
+    # 'Level4BG1': 0,
+    # 'Level4BG2': 0,
+    # 'Level4BG3': 0,
+    # 'Level4BG4': 0,
+    'ShipPlayer1': 0,
+    'ShipPlayer1Shot': 0,
+    'ShipPlayer2': 0,
+    'ShipPlayer2Shot': 0,
+    'ShipEnemy1': 8,
+    'ShipEnemy1Shot': 0,
+    'ShipEnemy2': 5,
+    'ShipEnemy2Shot': 0
 }
 # M
 MENU_OPTION = ('NEW GAME 1P',

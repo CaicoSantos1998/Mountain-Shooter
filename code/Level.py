@@ -7,7 +7,7 @@ import pygame as pg
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import COLOR_WHITE, SCREEN_HEIGHT, MENU_OPTION, EVENT_ENEMY, SPAWN_ENEMY_TIME
+from code.Const import COLOR_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_ENEMY_TIME, COLOR_GREEN, COLOR_CYAN
 from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
@@ -41,6 +41,12 @@ class Level:
                     shoot = entity.shoot()
                     if shoot is not None:
                         self.entity_list.append(shoot)
+                if entity.name == 'ShipPlayer1':
+                    self.level_text(20, f'Player 1 - Health: {entity.health} | Score: {entity.score}',
+                                    COLOR_GREEN, (5, 25))
+                if entity.name == 'ShipPlayer2':
+                    self.level_text(20, f'Player 2 - Health: {entity.health} | Score: {entity.score}',
+                                    COLOR_CYAN, (5, 45))
             for event in pg.event.get():
                 if event.type == pg.QUIT:
                     pg.quit()
@@ -49,9 +55,9 @@ class Level:
                     choice = random.choice(('ShipEnemy1', 'ShipEnemy2'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
-            self.level_text(14, f'{self.name} - Timeout: {self.timeout / 1000:.1f}s', COLOR_WHITE, (10, 5))
-            self.level_text(14, f'FPS: {clock.get_fps():.0f}', COLOR_WHITE, (10, SCREEN_HEIGHT - 35))
-            self.level_text(14, f'ENTITIES: {len(self.entity_list)}', COLOR_WHITE, (10, SCREEN_HEIGHT - 20))
+            self.level_text(20, f'{self.name}', COLOR_WHITE, (5, 5))
+            self.level_text(20, f'FPS: {clock.get_fps():.0f}', COLOR_WHITE,
+                            (50, 5))
             pg.display.flip()
 
             EntityMediator.verify_collision(entity_list=self.entity_list)
