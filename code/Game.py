@@ -5,6 +5,7 @@ import pygame as pg
 from code.Const import SCREEN_HEIGHT, SCREEN_WIDTH, MENU_OPTION
 from code.Level import Level
 from code.Menu import Menu
+from code.Score import Score
 
 
 class Game:
@@ -17,6 +18,7 @@ class Game:
     def run(self):
         # Loop start
         while True:
+            score = Score(self.screen)
             menu = Menu(self.screen)
             menu_return = menu.run()
 
@@ -27,6 +29,17 @@ class Game:
                 if level_return:
                     level = Level(self.screen, 'Level2', menu_return, player_score)
                     level_return = level.run(player_score)
+                if level_return:
+                    level = Level(self.screen, 'Level3', menu_return, player_score)
+                    level_return = level.run(player_score)
+                if level_return:
+                    level = Level(self.screen, 'Level4', menu_return, player_score)
+                    level_return = level.run(player_score)
+                    if level_return:
+                        score.save(menu_return, player_score)
+
+            elif menu_return == MENU_OPTION[3]:
+                score.show()
             elif menu_return == MENU_OPTION[4]:
                 pg.quit()
                 quit()

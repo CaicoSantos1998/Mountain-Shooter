@@ -1,0 +1,24 @@
+import sqlite3
+
+
+class DBProxy:
+    def __init__(self, db_name:str):
+        self.db_name = db_name
+        self.connection = sqlite3.connect(db_name)
+        self.connection.execute('''
+            CREATE TABLE IF NOT EXISTS datas(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            score INTEGER NOT NULL,
+            date TEXT NOT NULL)
+        ''')
+
+    def save(self, score_dic:dict):
+        self.connection.execute('INSERT INTO datas(name, score, date) VALUES (:name, :score, :date)', score_dic)
+        self.connection.commit()
+
+    def retrieve_top10(self) -> list:
+        return self.connection.execute('SELECT * FROM datas ORDER BY score DESC LIMIT 10').fetchall()
+
+    def close(self):
+        return self.connection.close()
