@@ -4,7 +4,8 @@ import pygame as pg
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import COLOR_ORANGE, SIZE_TEXT, MENU_OPTION, COLOR_WHITE, SCREEN_WIDTH, COLOR_YELLOW
+from code.Const import COLOR_ORANGE, TEXT_SIZE_TITLE, MENU_OPTION, COLOR_WHITE, SCREEN_WIDTH, COLOR_YELLOW, \
+    TEXT_SIZE_MENU
 
 
 class Menu:
@@ -20,13 +21,13 @@ class Menu:
         while True:
             # Draw images
             self.screen.blit(source=self.surf, dest=self.rect)
-            self.menu_text(SIZE_TEXT, "Mountain", COLOR_ORANGE, ((SCREEN_WIDTH/2), 70))
-            self.menu_text(SIZE_TEXT, "Shooter", COLOR_ORANGE, ((SCREEN_WIDTH/2), 120))
+            self.menu_text(TEXT_SIZE_TITLE, "Mountain", COLOR_ORANGE, ((SCREEN_WIDTH / 2), 70))
+            self.menu_text(TEXT_SIZE_TITLE, "Shooter", COLOR_ORANGE, ((SCREEN_WIDTH / 2), 120))
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(40, MENU_OPTION[i], COLOR_YELLOW, ((SCREEN_WIDTH / 2), 200 + 25 * i))
+                    self.menu_text(TEXT_SIZE_MENU, MENU_OPTION[i], COLOR_YELLOW, ((SCREEN_WIDTH / 2), 200 + 25 * i))
                 else:
-                    self.menu_text(40, MENU_OPTION[i], COLOR_WHITE, ((SCREEN_WIDTH/2), 200 + 25 * i))
+                    self.menu_text(TEXT_SIZE_MENU, MENU_OPTION[i], COLOR_WHITE, ((SCREEN_WIDTH/2), 200 + 25 * i))
             pg.display.flip()
             #Check for all events
             for event in pg.event.get():
