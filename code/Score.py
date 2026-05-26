@@ -25,6 +25,8 @@ class Score:
         while True:
             self.screen.blit(source=self.surf, dest=self.rect)
             self.score_text(TEXT_SIZE_TITLE, 'YOU WIN!!', COLOR_YELLOW, SCORE_POS['Title'])
+            text = 'Enter Player 1 name [MAX(4) characters]'
+            score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
                 text = 'Enter Player 1 name [MAX(4) characters]'
@@ -59,10 +61,12 @@ class Score:
 
     def show(self):
         pg.mixer_music.load('./asset/MusicScore.wav')
+        pg.mixer_music.set_volume(0.1)
         pg.mixer_music.play(-1)
         self.screen.blit(source=self.surf, dest=self.rect)
         self.score_text(48, 'TOP 10 SCORE', COLOR_BLACK, SCORE_POS['Title'])
-        self.score_text(20, 'NAME          SCORE          DATE          ', COLOR_BLACK, SCORE_POS['Label'])
+        self.score_text(20, 'NAME          SCORE          DATE          ',
+                        COLOR_BLACK, SCORE_POS['Label'])
         db_proxy = DBProxy('DBScore')
         list_score = db_proxy.retrieve_top10()
         db_proxy.close()

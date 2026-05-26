@@ -15,19 +15,19 @@ ENTITY_SPEED = {
     'Level1BG3': 3,
     'Level1BG4': 4,
     'Level2BG0': 0,
-    'Level2BG1': 1,
-    'Level2BG2': 2,
-    'Level2BG3': 3,
+    'Level2BG1': 0.50,
+    'Level2BG2': 1,
+    'Level2BG3': 2,
     'Level2BG4': 4,
     'Level3BG0': 0,
     'Level3BG1': 1,
-    'Level3BG2': 2,
-    'Level3BG3': 3,
+    'Level3BG2': 1,
+    'Level3BG3': 2,
     'Level3BG4': 4,
     'Level4BG0': 0,
-    'Level4BG1': 1,
-    'Level4BG2': 2,
-    'Level4BG3': 3,
+    'Level4BG1': 0.50,
+    'Level4BG2': 1,
+    'Level4BG3': 2,
     'ShipPlayer1': 4,
     'ShipPlayer1Shot': 2.5,
     'ShipPlayer2Shot': 2.5,
@@ -64,8 +64,7 @@ ENTITY_HEALTH = {
     'ShipEnemy1': 280,
     'ShipEnemy2': 300,
     'ShipEnemy1Shot': 1,
-    'ShipEnemy2Shot': 1,
-
+    'ShipEnemy2Shot': 1
 }
 EVENT_ENEMY = pg.USEREVENT + 1
 EVENT_TIMEOUT = pg.USEREVENT + 2
@@ -163,11 +162,11 @@ SCORE_POS = {
     6: (SCREEN_WIDTH / 2, 240),
     7: (SCREEN_WIDTH / 2, 260),
     8: (SCREEN_WIDTH / 2, 280),
-    9: (SCREEN_WIDTH / 2, 300),
+    9: (SCREEN_WIDTH / 2, 300)
 }
 # T
 TEXT_SIZE_TITLE = 120
 TEXT_SIZE_MENU = 45
 TEXT_SIZE = 20
 TIMEOUT_STEP = 100
-TIMEOUT_LEVEL = 20000
+TIMEOUT_LEVEL = 10000

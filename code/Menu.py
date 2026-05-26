@@ -14,7 +14,7 @@ class Menu:
         self.surf = pg.image.load('./asset/MenuBG.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
-    def run(self, ):
+    def run(self):
         menu_option = 0
         pg.mixer_music.load('./asset/MenuMusic.mp3')
         pg.mixer_music.play(-1)

@@ -37,6 +37,7 @@ class Level:
 
     def run(self, player_score:list[int]):
         pg.mixer_music.load(f'./asset/{self.name}.mp3')
+        pg.mixer_music.set_volume(0.2)
         pg.mixer_music.play(-1)
         clock = pg.time.Clock()
         while True:
